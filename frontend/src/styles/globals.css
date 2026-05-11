@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Inter:wght@400;500&family=JetBrains+Mono&display=swap');
+
+@import "tailwindcss";
+@theme {
+  --color-background-primary: #0A0F1E;
+  --color-background-secondary: #111827;
+  --color-background-card: #1A2235;
+  --color-accent-primary: #00D4AA;
+  --color-accent-secondary: #3B82F6;
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #94A3B8;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+  --color-success: #10B981;
+
+  --font-heading: "DM Sans", "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --shadow-accent-glow: 0 4px 24px rgba(0, 212, 170, 0.08);
+
+  --radius-small: 8px;
+  --radius-medium: 12px;
+  --radius-large: 16px;
+  --radius-pill: 24px;
+}
+
+@layer base {
+  body {
+    @apply bg-background-primary text-text-primary font-body antialiased;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-medium tracking-tight;
+  }
+  
+  code, pre {
+    @apply font-mono;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-medium px-4 py-2 font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent-primary focus:ring-offset-2 focus:ring-offset-background-primary disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-primary {
+    @apply bg-accent-primary text-background-primary hover:opacity-90 shadow-accent-glow;
+  }
+  
+  .btn-secondary {
+    @apply bg-background-card text-text-primary border border-white/10 hover:bg-white/5;
+  }
+  
+  .card {
+    @apply bg-background-card rounded-large border border-white/10 p-6;
+  }
+  
+  .input-field {
+    @apply w-full bg-background-secondary border border-white/10 rounded-medium px-4 py-3 text-text-primary placeholder-text-secondary focus:outline-none focus:border-accent-primary focus:ring-1 focus:ring-accent-primary transition-all;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+}
+
+/* Voice Animation */
+@keyframes waveform {
+  0% { transform: scaleY(0.5); opacity: 0.5; }
+  50% { transform: scaleY(1.2); opacity: 1; }
+  100% { transform: scaleY(0.5); opacity: 0.5; }
+}
+
+.wave-bar {
+  animation: waveform 1s infinite ease-in-out;
+  transform-origin: bottom;
+}
+.wave-bar:nth-child(2) { animation-delay: 0.2s; }
+.wave-bar:nth-child(3) { animation-delay: 0.4s; }
+.wave-bar:nth-child(4) { animation-delay: 0.1s; }
+.wave-bar:nth-child(5) { animation-delay: 0.3s; }
+
+/* Typing indicator */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.4; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.typing-dot {
+  animation: pulse-dot 1.4s infinite ease-in-out both;
+}
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
