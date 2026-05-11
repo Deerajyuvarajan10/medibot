@@ -24,7 +24,7 @@ export default function Header({ onMenuClick }) {
       </div>
 
       {/* Centre: Mode toggle — scrollable on mobile */}
-      <div className="flex-1 flex justify-center overflow-x-auto no-scrollbar">
+      <div className="flex-1 overflow-x-auto no-scrollbar flex items-center justify-start lg:justify-center px-1 mask-edges">
         <ModeToggle />
       </div>
 
