@@ -50,7 +50,7 @@ export default function ChatInput({ onSend, disabled, mode }) {
     e.target.value = '';
   };
 
-  const showAttachment = mode === MODES.DOCTOR;
+  const showAttachment = mode === MODES.DOCTOR || mode === MODES.IMAGEGEN;
 
   return (
     <form onSubmit={handleSubmit} className="relative">
