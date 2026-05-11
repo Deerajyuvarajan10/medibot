@@ -171,12 +171,6 @@ Add your screenshots here.
 
 ---
 
-# 👨‍💻 Author
-
-## Deeraj Yuvarajan
-
-- GitHub: https://github.com/your-username
-- LinkedIn: https://linkedin.com/in/your-linkedin
 
 ---
 
